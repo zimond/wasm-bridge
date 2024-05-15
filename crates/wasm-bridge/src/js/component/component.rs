@@ -11,6 +11,7 @@ use crate::{
 
 use super::*;
 
+#[derive(Clone)]
 pub struct Component {
     main_module: WebAssembly::Module,
     wasi_module: Option<WebAssembly::Module>,

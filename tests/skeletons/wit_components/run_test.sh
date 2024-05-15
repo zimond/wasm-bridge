@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 
 # Run from the "tests" folder and pass the instance name as an argument
 test="wit_components/$1"

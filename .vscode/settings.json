@@ -1,5 +1,20 @@
 {
   "rust-analyzer.showUnlinkedFileNotification": false,
-  "rust-analyzer.cargo.target": "wasm32-unknown-unknown",
-  "cSpell.words": ["Multiword"]
+  "rust-analyzer.check.overrideCommand": [
+    "cargo",
+    "component",
+    "check",
+    "-p",
+    "sillyvg",
+    "--message-format=json"
+  ],
+  "rust-analyzer.cargo.buildScripts.overrideCommand": [
+    "cargo",
+    "component",
+    "check",
+    "-p",
+    "sillyvg",
+    "--message-format=json"
+  ],
+  "rust-analyzer.cargo.target": "wasm32-wasi"
 }
