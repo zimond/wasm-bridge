@@ -43,6 +43,10 @@ impl Component {
         })
     }
 
+    pub async unsafe fn deserialize(engine: &Engine, bytes: impl AsRef<[u8]>) -> Result<Self> {
+        Self::new_safe(engine, bytes).await
+    }
+
     pub async fn new_safe(_engine: &Engine, bytes: impl AsRef<[u8]>) -> Result<Self> {
         let files = ComponentLoader::generate_files(bytes.as_ref())?;
 

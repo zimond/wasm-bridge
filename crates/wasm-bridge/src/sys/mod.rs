@@ -743,6 +743,12 @@ pub mod component {
             #[allow(deprecated)]
             Self::new(engine, bytes)
         }
+
+        pub async unsafe fn deserialize(engine: &Engine, bytes: impl AsRef<[u8]>) -> Result<Self> {
+            Ok(Self(wasmtime::component::Component::deserialize(
+                engine, bytes,
+            )?))
+        }
     }
 
     /// A type used to instantiate [`Component`]s.
